@@ -1,0 +1,24 @@
+{
+  "judul": "Which Country Is the Coolest?!",
+  "karakter": {
+    "Indonesia": {"bendera": "indonesia", "bentuk": "bulat",  "aksesori": ["peci"],              "suara": "en-US-GuyNeural",   "rate": "+8%",  "pitch": "+0Hz"},
+    "Jepang":    {"bendera": "jepang",    "bentuk": "tinggi", "aksesori": ["hachimaki"],         "suara": "en-US-AnaNeural",   "rate": "+10%", "pitch": "+6Hz"},
+    "Prancis":   {"bendera": "prancis",   "bentuk": "gemuk",  "aksesori": ["beret", "kumis"],    "suara": "en-GB-RyanNeural",  "rate": "+0%",  "pitch": "-2Hz"},
+    "Brasil":    {"bendera": "brasil",    "bentuk": "bulat",  "aksesori": ["kacamata"],          "suara": "en-US-JennyNeural", "rate": "+10%", "pitch": "+0Hz"}
+  },
+  "adegan": [
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Guess which country has over 17,000 islands?", "ekspresi": {"Indonesia": "senang"}},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Jepang",    "teks": "Hmm... is it me?"},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Nope! It's me, Indonesia!", "ekspresi": {"Jepang": "sedih"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Pfft! Islands? I have the Eiffel Tower!", "tumpang": 0.2, "ekspresi": {"Indonesia": "kaget"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Ha! I have most of the Amazon rainforest!", "tumpang": 0.15, "ekspresi": {"Prancis": "marah", "Brasil": "senang"}},
+    {"bg": "jepang.png",    "efek": "sakura",  "karakter": "Jepang",    "teks": "I have Mount Fuji AND super fast bullet trains!", "ekspresi": {"Jepang": "senang"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Bullet trains? Hmph. I have croissants!", "tumpang": 0.25, "ekspresi": {"Jepang": "marah"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Croissants can't beat the Amazon!", "tumpang": 0.2, "ekspresi": {"Brasil": "marah"}},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Wait! I have Komodo dragons. Real-life dragons!", "tumpang": 0.2, "ekspresi": {"Prancis": "kaget", "Brasil": "kaget", "Jepang": "kaget"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Okay... that is actually very cool.", "ekspresi": {"Prancis": "kaget"}},
+    {"bg": "jepang.png",    "efek": "sakura",  "karakter": "Jepang",    "teks": "Hey, can we all be cool together?", "ekspresi": {"Jepang": "senang"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Every country is special in its own way!", "ekspresi": {"Brasil": "senang", "Indonesia": "senang"}},
+    {"bg": "malam.png",     "efek": "bintang", "karakter": "Indonesia", "teks": "Which country should we visit next? Comment below!", "ekspresi": {"Indonesia": "senang", "Jepang": "senang", "Prancis": "senang", "Brasil": "senang"}}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "judul": "Which Country Has the Craziest Fact?!",
+  "karakter": {
+    "Belanda": {"bendera": "belanda", "bentuk": "bulat",  "aksesori": ["bunga"],     "suara": "en-US-AnaNeural",         "rate": "+8%",  "pitch": "+5Hz"},
+    "Jerman":  {"bendera": "jerman",  "bentuk": "tinggi", "aksesori": ["topi_koki"], "suara": "en-US-ChristopherNeural", "rate": "+5%",  "pitch": "-3Hz"},
+    "Turki":   {"bendera": "turki",   "bentuk": "gemuk",  "aksesori": ["kacamata"],  "suara": "en-GB-RyanNeural",        "rate": "+0%",  "pitch": "+0Hz"},
+    "Korea":   {"bendera": "korea",   "bentuk": "bulat",  "aksesori": ["mahkota"],   "suara": "en-US-JennyNeural",       "rate": "+10%", "pitch": "+3Hz"}
+  },
+  "adegan": [
+    {"bg": "belanda.png", "efek": "awan", "karakter": "Belanda", "teks": "In my country, there are more bikes than people!", "ekspresi": {"Belanda": "senang"}},
+    {"bg": "jerman.png",  "efek": "awan", "karakter": "Jerman",  "teks": "Hah! I invented gummy bears!", "tumpang": 0.2, "ekspresi": {"Jerman": "senang", "Belanda": "kaget"}},
+    {"bg": "turki.png",   "efek": "awan", "karakter": "Turki",   "teks": "My city, Istanbul, is on TWO continents at once!", "tumpang": 0.15, "ekspresi": {"Jerman": "kaget", "Belanda": "kaget"}},
+    {"bg": "korea.png",   "efek": "sakura", "karakter": "Korea", "teks": "My alphabet was made by a king so everyone could learn to read!", "tumpang": 0.1, "ekspresi": {"Korea": "senang"}},
+    {"bg": "belanda.png", "efek": "awan", "karakter": "Belanda", "teks": "About a quarter of my land is below sea level!", "tumpang": 0.2, "ekspresi": {"Belanda": "senang", "Turki": "kaget", "Korea": "kaget"}},
+    {"bg": "jerman.png",  "efek": "awan", "karakter": "Jerman",  "teks": "Wait, how are you not underwater?!", "tumpang": 0.1, "ekspresi": {"Jerman": "kaget"}},
+    {"bg": "belanda.png", "efek": "awan", "karakter": "Belanda", "teks": "Big walls and clever pumps!", "ekspresi": {"Belanda": "senang"}},
+    {"bg": "turki.png",   "efek": "awan", "karakter": "Turki",   "teks": "Okay, that is a very cool fact.", "ekspresi": {"Turki": "kaget"}},
+    {"bg": "korea.png",   "efek": "sakura", "karakter": "Korea", "teks": "Different facts, all amazing!", "ekspresi": {"Korea": "senang", "Belanda": "senang", "Jerman": "senang", "Turki": "senang"}},
+    {"bg": "jerman.png",  "efek": "awan", "karakter": "Jerman",  "teks": "Comment your favorite country fact!", "ekspresi": {"Jerman": "senang", "Belanda": "senang", "Korea": "senang", "Turki": "senang"}}
+  ]
+}

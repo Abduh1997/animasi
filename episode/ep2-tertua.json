@@ -1,0 +1,24 @@
+{
+  "judul": "Which Country Is the Oldest?!",
+  "karakter": {
+    "Meksiko": {"bendera": "meksiko", "bentuk": "gemuk",  "aksesori": ["bunga"],     "suara": "en-US-ChristopherNeural", "rate": "+8%",  "pitch": "+0Hz"},
+    "Mesir":   {"bendera": "mesir",   "bentuk": "tinggi", "aksesori": ["mahkota"],   "suara": "en-GB-RyanNeural",        "rate": "-3%",  "pitch": "-4Hz"},
+    "Italia":  {"bendera": "italia",  "bentuk": "bulat",  "aksesori": ["topi_koki"], "suara": "en-US-JennyNeural",       "rate": "+10%", "pitch": "+2Hz"},
+    "India":   {"bendera": "india",   "bentuk": "bulat",  "aksesori": ["kacamata"],  "suara": "en-US-AnaNeural",         "rate": "+6%",  "pitch": "+4Hz"}
+  },
+  "adegan": [
+    {"bg": "meksiko.png", "efek": "konfeti", "karakter": "Meksiko", "teks": "Clap your hands at my pyramid and it chirps like a bird!", "ekspresi": {"Meksiko": "senang"}},
+    {"bg": "mesir.png",   "efek": "awan",    "karakter": "Mesir",   "teks": "Cute! But my pyramids are over 4,500 years old!", "tumpang": 0.2, "ekspresi": {"Meksiko": "kaget"}},
+    {"bg": "italia.png",  "efek": "awan",    "karakter": "Italia",  "teks": "My Colosseum is almost 2,000 years old! Bellissimo!", "tumpang": 0.15, "ekspresi": {"Italia": "senang"}},
+    {"bg": "mesir.png",   "efek": "awan",    "karakter": "Mesir",   "teks": "Pfft. Baby building.", "tumpang": 0.1, "ekspresi": {"Italia": "marah", "Mesir": "senang"}},
+    {"bg": "india.png",   "efek": "awan",    "karakter": "India",   "teks": "Wait! Chess started in India!", "tumpang": 0.2},
+    {"bg": "india.png",   "efek": "awan",    "karakter": "India",   "teks": "And I gave the world the number zero!", "ekspresi": {"India": "senang"}},
+    {"bg": "italia.png",  "efek": "awan",    "karakter": "Italia",  "teks": "Zero? That sounds like nothing!", "tumpang": 0.1, "ekspresi": {"India": "sedih"}},
+    {"bg": "mesir.png",   "efek": "awan",    "karakter": "Mesir",   "teks": "Literally nothing!", "tumpang": 0.15, "ekspresi": {"Mesir": "senang", "India": "marah"}},
+    {"bg": "india.png",   "efek": "awan",    "karakter": "India",   "teks": "Exactly! Zero is super important for math and computers!", "tumpang": 0.2, "ekspresi": {"Italia": "kaget", "Mesir": "kaget", "Meksiko": "kaget"}},
+    {"bg": "meksiko.png", "efek": "konfeti", "karakter": "Meksiko", "teks": "Okay, old places are awesome!", "ekspresi": {"Meksiko": "senang"}},
+    {"bg": "italia.png",  "efek": "awan",    "karakter": "Italia",  "teks": "Every old place has a story!", "ekspresi": {"Italia": "senang"}},
+    {"bg": "meksiko.png", "efek": "konfeti", "karakter": "Meksiko", "teks": "Now clap with me! Can you hear a bird?", "ekspresi": {"Meksiko": "senang", "Mesir": "senang", "Italia": "senang", "India": "senang"}},
+    {"bg": "mesir.png",   "efek": "awan",    "karakter": "Mesir",   "teks": "Comment your favorite old place!", "ekspresi": {"Mesir": "senang", "Meksiko": "senang", "Italia": "senang", "India": "senang"}}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "judul": "Which Country Has the Coolest Animal?!",
+  "karakter": {
+    "Indonesia": {"bendera": "indonesia", "bentuk": "bulat",  "aksesori": ["peci"],      "suara": "en-US-ChristopherNeural", "rate": "+8%",  "pitch": "+0Hz"},
+    "Brasil":    {"bendera": "brasil",    "bentuk": "gemuk",  "aksesori": ["kacamata"], "suara": "en-US-JennyNeural",       "rate": "+10%", "pitch": "+0Hz"},
+    "India":     {"bendera": "india",     "bentuk": "tinggi", "aksesori": ["bunga"],    "suara": "en-GB-RyanNeural",        "rate": "+0%",  "pitch": "-2Hz"},
+    "Jepang":    {"bendera": "jepang",    "bentuk": "bulat",  "aksesori": ["hachimaki"], "suara": "en-US-AnaNeural",        "rate": "+10%", "pitch": "+6Hz"}
+  },
+  "adegan": [
+    {"bg": "hutan.png",   "efek": "",       "karakter": "Indonesia", "teks": "Which animal's name means 'person of the forest'?", "ekspresi": {"Indonesia": "senang"}},
+    {"bg": "hutan.png",   "efek": "",       "karakter": "Brasil",    "teks": "Hmm... a monkey?"},
+    {"bg": "hutan.png",   "efek": "",       "karakter": "Indonesia", "teks": "Orangutan! In my language, orang means person!", "ekspresi": {"Indonesia": "senang", "Brasil": "kaget"}},
+    {"bg": "hutan.png",   "efek": "",       "karakter": "India",     "teks": "Cute! But I have tigers! Most wild tigers live in India!", "tumpang": 0.2, "ekspresi": {"India": "senang", "Indonesia": "kaget"}},
+    {"bg": "brasil.png",  "efek": "konfeti", "karakter": "Brasil",   "teks": "Hah! I have the capybara, the biggest rodent on Earth!", "tumpang": 0.15, "ekspresi": {"Brasil": "senang", "India": "marah"}},
+    {"bg": "salju.png",   "efek": "salju",  "karakter": "Jepang",    "teks": "I have snow monkeys that relax in hot springs!", "ekspresi": {"Jepang": "senang"}},
+    {"bg": "hutan.png",   "efek": "",       "karakter": "Indonesia", "teks": "Wait, monkeys in a hot tub?!", "tumpang": 0.1, "ekspresi": {"Indonesia": "kaget", "India": "kaget", "Brasil": "kaget"}},
+    {"bg": "salju.png",   "efek": "salju",  "karakter": "Jepang",    "teks": "Yes! A spa day for monkeys!", "tumpang": 0.1, "ekspresi": {"Jepang": "senang"}},
+    {"bg": "brasil.png",  "efek": "konfeti", "karakter": "Brasil",   "teks": "Capybaras take hot baths in Japan too!", "tumpang": 0.2, "ekspresi": {"Brasil": "senang"}},
+    {"bg": "hutan.png",   "efek": "",       "karakter": "India",     "teks": "Animals are amazing everywhere!", "ekspresi": {"India": "senang"}},
+    {"bg": "salju.png",   "efek": "salju",  "karakter": "Indonesia", "teks": "Which animal is your favorite? Comment below!", "ekspresi": {"Indonesia": "senang", "Brasil": "senang", "India": "senang", "Jepang": "senang"}}
+  ]
+}
