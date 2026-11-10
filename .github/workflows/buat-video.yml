@@ -2,6 +2,10 @@ name: Buat Video
 
 on:
   workflow_dispatch:        # tombol "Run workflow" manual
+    inputs:
+      naskah:
+        description: "File naskah, mis. naskah.json atau episode/ep2-tertua.json"
+        default: "naskah.json"
   push:
     paths:                  # otomatis jalan kalau file ini diubah
       - "naskah.json"
@@ -21,7 +25,7 @@ jobs:
       - name: Pasang library Python
         run: pip install -r requirements.txt
       - name: Buat video
-        run: python make_video.py
+        run: python make_video.py "${{ github.event.inputs.naskah || 'naskah.json' }}"
       - name: Simpan hasil
         uses: actions/upload-artifact@v4
         with:
