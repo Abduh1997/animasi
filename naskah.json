@@ -1,13 +1,19 @@
 {
-  "judul": "Bimo dan Mila",
+  "judul": "Bulan Ngikutin Kita?!",
   "karakter": {
     "Bimo": {"warna": "#F4A259", "suara": "id-ID-ArdiNeural", "posisi": "kiri"},
     "Mila": {"warna": "#8CB369", "suara": "id-ID-GadisNeural", "posisi": "kanan"}
   },
   "adegan": [
-    {"bg": "#BDE0FE", "karakter": "Bimo", "teks": "Halo teman-teman! Namaku Bimo."},
-    {"bg": "#BDE0FE", "karakter": "Mila", "teks": "Halo Bimo! Aku Mila. Ayo kita belajar menyikat gigi!"},
-    {"bg": "#FFE5B4", "karakter": "Bimo", "teks": "Sikat gigi pagi hari dan malam hari ya."},
-    {"bg": "#FFE5B4", "karakter": "Mila", "teks": "Biar gigi kita bersih dan sehat. Sampai jumpa!"}
+    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Mila, tunggu! Bulannya ngikutin aku!"},
+    {"bg": "#1B263B", "karakter": "Mila", "teks": "Hah, masa sih? Coba kita lari!"},
+    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Aku lari ke kiri, bulan ikut! Ke kanan, ikut lagi!"},
+    {"bg": "#1B263B", "karakter": "Mila", "teks": "Jangan-jangan bulannya suka sama kita?"},
+    {"bg": "#3C096C", "karakter": "Bimo", "teks": "Hihi, bukan! Rahasianya, bulan itu jauh banget!"},
+    {"bg": "#3C096C", "karakter": "Mila", "teks": "Jaraknya sekitar 384 ribu kilometer dari kita!"},
+    {"bg": "#14532D", "karakter": "Bimo", "teks": "Naik mobil, pohon dekat lewat cepat. Gunung jauh kelihatan diam."},
+    {"bg": "#14532D", "karakter": "Mila", "teks": "Karena jauh, bulan kelihatan ikut jalan bersama kita!"},
+    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Wow! Besok kita cari tahu, kenapa bulan bisa jadi sabit?"},
+    {"bg": "#1B263B", "karakter": "Mila", "teks": "Komen ya, kamu pernah lihat bulan ngikutin kamu?"}
   ]
 }
