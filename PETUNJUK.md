@@ -1,30 +1,31 @@
-# Cara pakai (tanpa memasang apa pun di laptop)
+# Video Animasi Negara (GitHub Actions)
 
-1. Buat akun di github.com, lalu buat repository baru (boleh Private).
-2. Klik "Add file > Upload files", unggah SEMUA isi folder ini
-   (termasuk folder `.github`). Kalau folder tersembunyi tidak ikut ter-upload,
-   buat manual file `.github/workflows/buat-video.yml` lewat "Add file > Create new file".
-3. Edit `naskah.json` langsung di GitHub (ikon pensil) -> Commit.
-4. Buka tab **Actions** -> "Buat Video" -> tunggu hijau (beberapa menit).
-5. Klik run tersebut -> bagian **Artifacts** -> unduh `video-shorts` -> ekstrak -> `video.mp4`.
-6. Upload ke YouTube Shorts, atur "dibuat untuk anak-anak".
+Cara pakai: unggah semua isi folder ini ke repository GitHub, edit naskah.json, jalankan tab Actions > Buat Video,
+lalu unduh video.mp4 dari bagian Artifacts.
 
-Opsional (taruh di folder `assets/`):
-- `Bimo.png`, `Mila.png`  : gambar karakter sendiri (PNG transparan, nama sama dengan di naskah)
-- `musik.mp3`             : musik latar bebas hak cipta
-- gambar latar            : isi "bg" di naskah dengan nama file, mis. "taman.png"
-Suara Indonesia: id-ID-ArdiNeural (laki-laki), id-ID-GadisNeural (perempuan).
+## Karakter (di naskah.json, bagian "karakter")
+- "bendera": indonesia, jepang, prancis, italia, jerman, belanda, brasil, india, meksiko, mesir, turki, polandia, korea, swedia, amerika
+  (bendera lain: tulis "warna": "#RRGGBB" untuk warna polos)
+- "bentuk": bulat | tinggi | gemuk
+- "aksesori" (boleh lebih dari satu): peci, beret, hachimaki, kacamata, kumis, topi_koki, mahkota, bunga
+- "suara": nama suara edge-tts (mis. en-US-GuyNeural, en-US-AnaNeural, en-GB-RyanNeural, en-US-JennyNeural)
+  "rate": kecepatan (mis. "+10%"), "pitch": nada (mis. "+6Hz")
+- "nama_tampil": teks nama di bawah karakter (opsional)
+Jumlah karakter bebas (2 sampai 5 paling enak dilihat).
 
-## Suara natural (rekaman sendiri)
-Rekam tiap adegan lewat HP (ruangan sepi, bicara ekspresif seperti pengisi suara kartun).
-Beri nama berurutan: adegan1.mp3, adegan2.mp3, dst (sesuai urutan adegan di naskah.json)
-lalu taruh di folder assets/suara/. Adegan tanpa rekaman otomatis memakai suara komputer.
-Format mp3, wav, m4a, atau ogg boleh. Boleh dicampur: sebagian rekaman, sebagian suara komputer.
+## Adegan (bagian "adegan")
+- "karakter": siapa yang bicara, "teks": dialognya
+- "bg": nama gambar latar di assets/ (atau kode warna "#RRGGBB")
+- "efek": awan | bintang | sakura | konfeti (opsional, boleh digabung: "awan sakura")
+- "ekspresi": {"Prancis": "marah", "Jepang": "kaget"}  -> normal | senang | kaget | marah | sedih
+- "tumpang": detik (mis. 0.2) = karakter ini menyela sebelum dialog sebelumnya selesai
+Jeda antar dialog sudah dibuat sangat singkat otomatis.
 
-## Latar (background)
-Di naskah.json, isi "bg" tiap adegan dengan:
-- kode warna, mis. "#BDE0FE"  -> latar warna polos
-- nama file gambar di folder assets/, mis. "malam.png" -> gambar latar
-Gambar paling bagus berukuran 1080x1920 (vertikal); ukuran lain akan dipotong di tengah.
-Sudah disediakan: malam.png, angkasa.png, jalan.png.
-Buat latar sendiri: Canva (ukuran custom 1080x1920) lalu Download PNG, taruh di assets/.
+## Latar
+Tersedia: indonesia, jepang, prancis, brasil, italia, jerman, india, belanda, meksiko, mesir, malam, angkasa, jalan.
+Latar bergerak otomatis (kamera zoom dan geser pelan). Tambah latar sendiri: PNG 1080x1920 di assets/.
+bikin_latar.py = skrip pembuat latar bawaan (opsional dijalankan di komputer).
+
+## Suara rekaman sendiri (lebih natural)
+Rekam tiap adegan, beri nama adegan1.mp3, adegan2.mp3, dst, taruh di assets/suara/. Adegan tanpa rekaman memakai suara komputer.
+Musik latar: taruh musik.mp3 di assets/ (otomatis dipelankan).

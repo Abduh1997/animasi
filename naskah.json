@@ -1,19 +1,24 @@
 {
-  "judul": "Is the Moon Following Us?!",
+  "judul": "Which Country Is the Coolest?!",
   "karakter": {
-    "Bimo": {"warna": "#F4A259", "suara": "en-US-GuyNeural", "posisi": "kiri", "rate": "+0%"},
-    "Mila": {"warna": "#8CB369", "suara": "en-US-AnaNeural", "posisi": "kanan", "rate": "+0%"}
+    "Indonesia": {"bendera": "indonesia", "bentuk": "bulat",  "aksesori": ["peci"],              "suara": "en-US-GuyNeural",   "rate": "+8%",  "pitch": "+0Hz"},
+    "Jepang":    {"bendera": "jepang",    "bentuk": "tinggi", "aksesori": ["hachimaki"],         "suara": "en-US-AnaNeural",   "rate": "+10%", "pitch": "+6Hz"},
+    "Prancis":   {"bendera": "prancis",   "bentuk": "gemuk",  "aksesori": ["beret", "kumis"],    "suara": "en-GB-RyanNeural",  "rate": "+0%",  "pitch": "-2Hz"},
+    "Brasil":    {"bendera": "brasil",    "bentuk": "bulat",  "aksesori": ["kacamata"],          "suara": "en-US-JennyNeural", "rate": "+10%", "pitch": "+0Hz"}
   },
   "adegan": [
-    {"bg": "malam.png", "karakter": "Bimo", "teks": "Mila, wait! The moon is following me!"},
-    {"bg": "malam.png", "karakter": "Mila", "teks": "What? No way! Let's run and see!"},
-    {"bg": "malam.png", "karakter": "Bimo", "teks": "I run left, the moon follows! I run right, it follows again!"},
-    {"bg": "malam.png", "karakter": "Mila", "teks": "Maybe the moon likes us?"},
-    {"bg": "angkasa.png", "karakter": "Bimo", "teks": "Hehe, nope! Here's the secret: the moon is super far away!"},
-    {"bg": "angkasa.png", "karakter": "Mila", "teks": "It's about 384,000 kilometers away from us!"},
-    {"bg": "jalan.png", "karakter": "Bimo", "teks": "In a car, close trees zoom by. But faraway mountains seem to stand still."},
-    {"bg": "jalan.png", "karakter": "Mila", "teks": "Because the moon is so far, it looks like it walks with us!"},
-    {"bg": "malam.png", "karakter": "Bimo", "teks": "Wow! Tomorrow, let's find out why the moon changes shape!"},
-    {"bg": "malam.png", "karakter": "Mila", "teks": "Comment below: have you seen the moon follow you?"}
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Guess which country has over 17,000 islands?", "ekspresi": {"Indonesia": "senang"}},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Jepang",    "teks": "Hmm... is it me?"},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Nope! It's me, Indonesia!", "ekspresi": {"Jepang": "sedih"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Pfft! Islands? I have the Eiffel Tower!", "tumpang": 0.2, "ekspresi": {"Indonesia": "kaget"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Ha! I have most of the Amazon rainforest!", "tumpang": 0.15, "ekspresi": {"Prancis": "marah", "Brasil": "senang"}},
+    {"bg": "jepang.png",    "efek": "sakura",  "karakter": "Jepang",    "teks": "I have Mount Fuji AND super fast bullet trains!", "ekspresi": {"Jepang": "senang"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Bullet trains? Hmph. I have croissants!", "tumpang": 0.25, "ekspresi": {"Jepang": "marah"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Croissants can't beat the Amazon!", "tumpang": 0.2, "ekspresi": {"Brasil": "marah"}},
+    {"bg": "indonesia.png", "efek": "awan",    "karakter": "Indonesia", "teks": "Wait! I have Komodo dragons. Real-life dragons!", "tumpang": 0.2, "ekspresi": {"Prancis": "kaget", "Brasil": "kaget", "Jepang": "kaget"}},
+    {"bg": "prancis.png",   "efek": "awan",    "karakter": "Prancis",   "teks": "Okay... that is actually very cool.", "ekspresi": {"Prancis": "kaget"}},
+    {"bg": "jepang.png",    "efek": "sakura",  "karakter": "Jepang",    "teks": "Hey, can we all be cool together?", "ekspresi": {"Jepang": "senang"}},
+    {"bg": "brasil.png",    "efek": "konfeti", "karakter": "Brasil",    "teks": "Every country is special in its own way!", "ekspresi": {"Brasil": "senang", "Indonesia": "senang"}},
+    {"bg": "malam.png",     "efek": "bintang", "karakter": "Indonesia", "teks": "Which country should we visit next? Comment below!", "ekspresi": {"Indonesia": "senang", "Jepang": "senang", "Prancis": "senang", "Brasil": "senang"}}
   ]
 }
