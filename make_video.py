@@ -29,8 +29,19 @@ def ffmpeg_pcm(path):
     return np.frombuffer(raw, dtype=np.int16)
 
 
-async def tts(teks, suara, path):
-    await edge_tts.Communicate(teks, suara).save(str(path))
+async def tts(teks, info, path):
+    await edge_tts.Communicate(teks, info["suara"],
+                               rate=info.get("rate", "-5%"),
+                               pitch=info.get("pitch", "+0Hz")).save(str(path))
+
+
+def cari_rekaman(i):
+    """Pakai rekaman suara sendiri kalau ada: assets/suara/adegan1.mp3, adegan2.mp3, ..."""
+    for ext in ("mp3", "wav", "m4a", "ogg"):
+        p = ASSETS / "suara" / f"adegan{i + 1}.{ext}"
+        if p.exists():
+            return p
+    return None
 
 
 def hex_rgb(h):
@@ -50,7 +61,7 @@ def bikin_bg(spec):
 
 def gambar_karakter(img, d, nama, info, bicara, amp, t, idx):
     cx = int(W * (0.27 if info.get("posisi", "kiri") == "kiri" else 0.73))
-    dasar = 1150
+    dasar = 1050
     bob = math.sin(t * 3 + idx) * 12 - (amp * 25 if bicara else 0)
     y = int(dasar + bob)
     warna = hex_rgb(info["warna"])
@@ -97,9 +108,13 @@ def main():
     # 1) suara tiap adegan
     pcm_adegan = []
     for i, ad in enumerate(adegan):
-        mp3 = TMP / f"s{i}.mp3"
-        asyncio.run(tts(ad["teks"], karakter[ad["karakter"]]["suara"], mp3))
-        pcm = ffmpeg_pcm(mp3)
+        rekaman = cari_rekaman(i)
+        if rekaman:
+            pcm = ffmpeg_pcm(rekaman)
+        else:
+            mp3 = TMP / f"s{i}.mp3"
+            asyncio.run(tts(ad["teks"], karakter[ad["karakter"]], mp3))
+            pcm = ffmpeg_pcm(mp3)
         pcm_adegan.append(np.concatenate([pcm, np.zeros(int(JEDA * SR), dtype=np.int16)]))
 
     # 2) gabung audio (+ musik latar opsional assets/musik.mp3)
@@ -129,7 +144,7 @@ def main():
             amp = float(min(1.0, np.sqrt(np.mean(seg ** 2)) / 6000)) if len(seg) else 0.0
             t = frame_global / FPS
             img = bg.copy(); d = ImageDraw.Draw(img)
-            d.text((W // 2, 130), data.get("judul", ""), font=font(70), fill="white",
+            d.text((W // 2, 130), data.get("judul", ""), font=font(56), fill="white",
                    anchor="mm", stroke_width=5, stroke_fill="black")
             for idx, (nama, info) in enumerate(karakter.items()):
                 gambar_karakter(img, d, nama, info, nama == ad["karakter"], amp, t, idx)

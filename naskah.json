@@ -1,19 +1,19 @@
 {
-  "judul": "Bulan Ngikutin Kita?!",
+  "judul": "Is the Moon Following Us?!",
   "karakter": {
-    "Bimo": {"warna": "#F4A259", "suara": "id-ID-ArdiNeural", "posisi": "kiri"},
-    "Mila": {"warna": "#8CB369", "suara": "id-ID-GadisNeural", "posisi": "kanan"}
+    "Bimo": {"warna": "#F4A259", "suara": "en-US-GuyNeural", "posisi": "kiri", "rate": "+0%"},
+    "Mila": {"warna": "#8CB369", "suara": "en-US-AnaNeural", "posisi": "kanan", "rate": "+0%"}
   },
   "adegan": [
-    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Mila, tunggu! Bulannya ngikutin aku!"},
-    {"bg": "#1B263B", "karakter": "Mila", "teks": "Hah, masa sih? Coba kita lari!"},
-    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Aku lari ke kiri, bulan ikut! Ke kanan, ikut lagi!"},
-    {"bg": "#1B263B", "karakter": "Mila", "teks": "Jangan-jangan bulannya suka sama kita?"},
-    {"bg": "#3C096C", "karakter": "Bimo", "teks": "Hihi, bukan! Rahasianya, bulan itu jauh banget!"},
-    {"bg": "#3C096C", "karakter": "Mila", "teks": "Jaraknya sekitar 384 ribu kilometer dari kita!"},
-    {"bg": "#14532D", "karakter": "Bimo", "teks": "Naik mobil, pohon dekat lewat cepat. Gunung jauh kelihatan diam."},
-    {"bg": "#14532D", "karakter": "Mila", "teks": "Karena jauh, bulan kelihatan ikut jalan bersama kita!"},
-    {"bg": "#1B263B", "karakter": "Bimo", "teks": "Wow! Besok kita cari tahu, kenapa bulan bisa jadi sabit?"},
-    {"bg": "#1B263B", "karakter": "Mila", "teks": "Komen ya, kamu pernah lihat bulan ngikutin kamu?"}
+    {"bg": "malam.png", "karakter": "Bimo", "teks": "Mila, wait! The moon is following me!"},
+    {"bg": "malam.png", "karakter": "Mila", "teks": "What? No way! Let's run and see!"},
+    {"bg": "malam.png", "karakter": "Bimo", "teks": "I run left, the moon follows! I run right, it follows again!"},
+    {"bg": "malam.png", "karakter": "Mila", "teks": "Maybe the moon likes us?"},
+    {"bg": "angkasa.png", "karakter": "Bimo", "teks": "Hehe, nope! Here's the secret: the moon is super far away!"},
+    {"bg": "angkasa.png", "karakter": "Mila", "teks": "It's about 384,000 kilometers away from us!"},
+    {"bg": "jalan.png", "karakter": "Bimo", "teks": "In a car, close trees zoom by. But faraway mountains seem to stand still."},
+    {"bg": "jalan.png", "karakter": "Mila", "teks": "Because the moon is so far, it looks like it walks with us!"},
+    {"bg": "malam.png", "karakter": "Bimo", "teks": "Wow! Tomorrow, let's find out why the moon changes shape!"},
+    {"bg": "malam.png", "karakter": "Mila", "teks": "Comment below: have you seen the moon follow you?"}
   ]
 }

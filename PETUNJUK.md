@@ -14,3 +14,17 @@ Opsional (taruh di folder `assets/`):
 - `musik.mp3`             : musik latar bebas hak cipta
 - gambar latar            : isi "bg" di naskah dengan nama file, mis. "taman.png"
 Suara Indonesia: id-ID-ArdiNeural (laki-laki), id-ID-GadisNeural (perempuan).
+
+## Suara natural (rekaman sendiri)
+Rekam tiap adegan lewat HP (ruangan sepi, bicara ekspresif seperti pengisi suara kartun).
+Beri nama berurutan: adegan1.mp3, adegan2.mp3, dst (sesuai urutan adegan di naskah.json)
+lalu taruh di folder assets/suara/. Adegan tanpa rekaman otomatis memakai suara komputer.
+Format mp3, wav, m4a, atau ogg boleh. Boleh dicampur: sebagian rekaman, sebagian suara komputer.
+
+## Latar (background)
+Di naskah.json, isi "bg" tiap adegan dengan:
+- kode warna, mis. "#BDE0FE"  -> latar warna polos
+- nama file gambar di folder assets/, mis. "malam.png" -> gambar latar
+Gambar paling bagus berukuran 1080x1920 (vertikal); ukuran lain akan dipotong di tengah.
+Sudah disediakan: malam.png, angkasa.png, jalan.png.
+Buat latar sendiri: Canva (ukuran custom 1080x1920) lalu Download PNG, taruh di assets/.
