@@ -1,5 +1,5 @@
 """naskah.json -> video Shorts 1080x1920: karakter bendera, latar bergerak, dialog tanpa jeda."""
-import asyncio, bisect, json, math, random, subprocess, textwrap, wave
+import asyncio, bisect, json, math, random, subprocess, sys, textwrap, wave
 from pathlib import Path
 
 import numpy as np
@@ -234,6 +234,10 @@ def efek(d, jenis, t):
         for k, (x, y, r) in enumerate(PARTIKEL):
             px = x + 60 * math.sin(t * .9 + k); py = (y + t * (70 + 50 * r)) % (H + 60) - 30
             d.ellipse((px - 11, py - 7, px + 11, py + 7), fill=(255, 183, 197))
+    if "salju" in jenis:
+        for k, (x, y, r) in enumerate(PARTIKEL):
+            px = x + 30 * math.sin(t + k); py = (y + t * (60 + 50 * r)) % (H + 20) - 10; rr = 4 + 5 * r
+            d.ellipse((px - rr, py - rr, px + rr, py + rr), fill=(255, 255, 255))
     if "konfeti" in jenis:
         for k, (x, y, r) in enumerate(PARTIKEL):
             px = x + 40 * math.sin(t * 2 + k); py = (y + t * (150 + 80 * r)) % H
@@ -264,10 +268,12 @@ def potong_hening(pcm, ambang=400):
     return pcm[max(0, idx[0] - pad): idx[-1] + pad]
 
 
-def cari_rekaman(i):
-    for ext in ("mp3", "wav", "m4a", "ogg"):
-        p = ASSETS / "suara" / f"adegan{i + 1}.{ext}"
-        if p.exists(): return p
+def cari_rekaman(i, stem):
+    """Rekaman per episode: assets/suara/<nama-naskah>/adegan1.mp3, atau assets/suara/adegan1.mp3"""
+    for folder in (ASSETS / "suara" / stem, ASSETS / "suara"):
+        for ext in ("mp3", "wav", "m4a", "ogg"):
+            p = folder / f"adegan{i + 1}.{ext}"
+            if p.exists(): return p
     return None
 
 
@@ -280,14 +286,15 @@ def subtitle(d, teks):
 
 # ------------------------------------------------------------------ utama
 def main():
-    data = json.load(open("naskah.json", encoding="utf-8"))
+    naskah = Path(sys.argv[1] if len(sys.argv) > 1 else "naskah.json")
+    data = json.load(open(naskah, encoding="utf-8"))
     karakter, adegan = data["karakter"], data["adegan"]
     nama_list = list(karakter.keys()); n = len(nama_list)
     TMP.mkdir(parents=True, exist_ok=True)
 
     pcms = []
     for i, ad in enumerate(adegan):
-        rek = cari_rekaman(i)
+        rek = cari_rekaman(i, naskah.stem)
         if rek: pcm = ffmpeg_pcm(rek)
         else:
             mp3 = TMP / f"s{i}.mp3"; asyncio.run(tts(ad["teks"], karakter[ad["karakter"]], mp3)); pcm = ffmpeg_pcm(mp3)
@@ -337,7 +344,11 @@ def main():
         lo, hi = shot_t[shot[i]]; p = min(1.0, max(0.0, (ts - lo) / max(1, hi - lo)))
         img = bg_gerak(bikin_bg(ad["bg"]), p, shot[i] % 2 == 0); d = ImageDraw.Draw(img)
         efek(d, ad.get("efek", ""), t)
-        d.text((W // 2, 120), data.get("judul", ""), font=font(56), fill="white", anchor="mm", stroke_width=5, stroke_fill="black")
+        judul = data.get("judul", ""); fj = font(56)
+        baris_j = [judul] if d.textlength(judul, font=fj) < W - 80 else textwrap.wrap(judul, 24)
+        if len(baris_j) > 1: fj = font(50)
+        for bi, bj in enumerate(baris_j):
+            d.text((W // 2, 105 + bi * 66), bj, font=fj, fill="white", anchor="mm", stroke_width=5, stroke_fill="black")
         pembicara = ad["karakter"]; urut = sorted(nama_list, key=lambda k: k == pembicara)
         for k in urut:
             idx = nama_list.index(k)

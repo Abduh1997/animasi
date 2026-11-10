@@ -179,8 +179,76 @@ def mesir():
     d.ellipse((-300, 1200, 700, 1700), fill=(235, 200, 130)); d.ellipse((300, 1260, 1400, 1800), fill=(225, 185, 115))
     d.rectangle((0, 1600, W, H), fill=(215, 175, 105)); palem(d, 150, 1420, 380, 30); return im
 
+def balon(d, x, y, r, c1, c2):
+    d.ellipse((x - r, y - r * 1.2, x + r, y + r * 1.2), fill=c1)
+    d.ellipse((x - r * .45, y - r * 1.2, x + r * .45, y + r * 1.2), fill=c2)
+    d.polygon([(x - r * .55, y + r * .95), (x + r * .55, y + r * .95), (x + r * .25, y + r * 1.45), (x - r * .25, y + r * 1.45)], fill=c1)
+    d.rectangle((x - r * .22, y + r * 1.45, x + r * .22, y + r * 1.75), fill=(120, 80, 40))
+
+def turki():
+    im, d = grad((120, 190, 240), (255, 232, 205)); awan(d, 200, 330, .8)
+    balon(d, 820, 430, 110, (230, 60, 60), (255, 210, 60)); balon(d, 330, 570, 80, (60, 140, 220), (255, 255, 255)); balon(d, 640, 300, 60, (250, 150, 40), (120, 200, 90))
+    d.rectangle((250, 930, 830, 1262), fill=(240, 225, 200))
+    d.pieslice((360, 740, 720, 1100), 180, 360, fill=(190, 202, 220)); d.rectangle((360, 905, 720, 935), fill=(225, 210, 185))
+    d.pieslice((250, 860, 400, 1010), 180, 360, fill=(200, 210, 225)); d.pieslice((680, 860, 830, 1010), 180, 360, fill=(200, 210, 225))
+    for x in (150, 885):
+        d.rectangle((x, 700, x + 45, 1262), fill=(245, 232, 210)); d.polygon([(x - 10, 700), (x + 22, 590), (x + 55, 700)], fill=(150, 160, 175))
+        d.rectangle((x - 10, 820, x + 55, 842), fill=(215, 200, 175))
+    for x in range(300, 800, 90):
+        d.rectangle((x, 1070, x + 40, 1160), fill=(90, 100, 120)); d.ellipse((x, 1040, x + 40, 1100), fill=(90, 100, 120))
+    d.rectangle((0, 1262, W, H), fill=(60, 140, 200))
+    for y in range(1300, H, 90):
+        for x in range(0, W, 140): d.arc((x, y, x + 100, y + 40), 200, 340, fill=(200, 235, 255), width=5)
+    return im
+
+def korea():
+    im, d = grad((255, 215, 225), (210, 235, 255)); awan(d, 800, 340, .8); awan(d, 220, 420, .6)
+    d.polygon([(-100, 1000), (250, 640), (600, 1000)], fill=(150, 170, 205)); d.polygon([(300, 1000), (700, 560), (1180, 1000)], fill=(130, 155, 195))
+    d.rectangle((140, 1170, 940, 1262), fill=(185, 180, 170))
+    for x in (250, 450, 630, 830): d.rectangle((x - 20, 960, x + 20, 1170), fill=(190, 40, 40))
+    d.rectangle((160, 925, 920, 968), fill=(40, 140, 120))
+    for i, x in enumerate(range(170, 920, 45)): d.rectangle((x, 932, x + 25, 960), fill=[(230, 60, 60), (70, 110, 200), (250, 210, 60)][i % 3])
+    d.polygon([(30, 880), (110, 945), (540, 925), (970, 945), (1050, 880), (960, 835), (700, 795), (540, 785), (380, 795), (120, 835)], fill=(70, 75, 85))
+    d.polygon([(250, 800), (310, 750), (540, 715), (770, 750), (830, 800), (540, 772)], fill=(85, 90, 100))
+    for tx in (60, 1020):
+        d.rectangle((tx - 18, 1040, tx + 18, 1262), fill=(100, 70, 50))
+        for dx, dy, r in [(0, 960, 150), (-90, 1020, 100), (90, 1020, 100), (0, 890, 100)]:
+            d.ellipse((tx + dx - r, dy - r * .8, tx + dx + r, dy + r * .8), fill=(255, 182, 200))
+    d.rectangle((0, 1262, W, H), fill=(200, 195, 185))
+    for y in range(1290, H, 80): d.line((0, y, W, y), fill=(175, 170, 160), width=3)
+    return im
+
+def hutan():
+    im, d = grad((20, 80, 50), (90, 160, 80)); r = random.Random(3)
+    for x in (80, 300, 780, 1000): d.rectangle((x - 35, 0, x + 35, 1300), fill=(70, 50, 35))
+    for _ in range(45):
+        x, y, rr = r.randint(-50, W + 50), r.randint(0, 520), r.randint(80, 170)
+        d.ellipse((x - rr, y - rr * .7, x + rr, y + rr * .7), fill=(r.randint(20, 50), r.randint(110, 170), r.randint(50, 80)))
+    for x in range(40, W, 160): d.line((x, 0, x + r.randint(-30, 30), r.randint(250, 600)), fill=(40, 110, 50), width=8)
+    d.rectangle((0, 1262, W, H), fill=(50, 100, 45))
+    for x in range(-40, W + 60, 110):
+        h = r.randint(130, 230); d.polygon([(x, 1262), (x + 40, 1262 - h), (x + 90, 1262)], fill=(35, 135, 60))
+    for x in range(60, W, 190): d.ellipse((x, 1300 + (x * 3) % 120, x + 30, 1330 + (x * 3) % 120), fill=(230, 60, 80))
+    return im
+
+def salju():
+    im, d = grad((200, 225, 245), (245, 250, 255))
+    d.polygon([(-100, 1100), (300, 640), (700, 1100)], fill=(190, 205, 225)); d.polygon([(350, 1100), (760, 560), (1180, 1100)], fill=(175, 195, 220))
+    d.polygon([(300, 640), (240, 720), (360, 720)], fill=(255, 255, 255)); d.polygon([(760, 560), (680, 680), (840, 680)], fill=(255, 255, 255))
+    d.rectangle((0, 1100, W, H), fill=(250, 252, 255))
+    d.ellipse((120, 1280, 960, 1700), fill=(100, 190, 200)); d.ellipse((170, 1310, 910, 1650), fill=(140, 215, 220))
+    for a in range(0, 360, 16):
+        x, y = 540 + 420 * math.cos(math.radians(a)), 1490 + 210 * math.sin(math.radians(a)); d.ellipse((x - 32, y - 24, x + 32, y + 24), fill=(110, 115, 125))
+    for x, y in ((400, 1230), (520, 1180), (650, 1235)): d.ellipse((x - 70, y - 40, x + 70, y + 40), fill=(235, 245, 250))
+    for x in (70, 1010):
+        for k in range(3):
+            d.polygon([(x - 80 + k * 10, 1150 - k * 90), (x, 1030 - k * 90), (x + 80 - k * 10, 1150 - k * 90)], fill=(35, 100, 70))
+            d.polygon([(x - 45 + k * 6, 1085 - k * 90), (x, 1030 - k * 90), (x + 45 - k * 6, 1085 - k * 90)], fill=(255, 255, 255))
+    return im
+
 for nama, f in [("malam", malam), ("angkasa", angkasa), ("jalan", jalan), ("indonesia", indonesia), ("jepang", jepang),
                 ("prancis", prancis), ("brasil", brasil), ("italia", italia), ("jerman", jerman), ("india", india),
-                ("belanda", belanda), ("meksiko", meksiko), ("mesir", mesir)]:
+                ("belanda", belanda), ("meksiko", meksiko), ("mesir", mesir),
+                ("turki", turki), ("korea", korea), ("hutan", hutan), ("salju", salju)]:
     f().save(OUT / f"{nama}.png")
 print("selesai")
