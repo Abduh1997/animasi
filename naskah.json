@@ -1,0 +1,13 @@
+{
+  "judul": "Bimo dan Mila",
+  "karakter": {
+    "Bimo": {"warna": "#F4A259", "suara": "id-ID-ArdiNeural", "posisi": "kiri"},
+    "Mila": {"warna": "#8CB369", "suara": "id-ID-GadisNeural", "posisi": "kanan"}
+  },
+  "adegan": [
+    {"bg": "#BDE0FE", "karakter": "Bimo", "teks": "Halo teman-teman! Namaku Bimo."},
+    {"bg": "#BDE0FE", "karakter": "Mila", "teks": "Halo Bimo! Aku Mila. Ayo kita belajar menyikat gigi!"},
+    {"bg": "#FFE5B4", "karakter": "Bimo", "teks": "Sikat gigi pagi hari dan malam hari ya."},
+    {"bg": "#FFE5B4", "karakter": "Mila", "teks": "Biar gigi kita bersih dan sehat. Sampai jumpa!"}
+  ]
+}
