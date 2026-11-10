@@ -1,0 +1,29 @@
+name: Buat Video
+
+on:
+  workflow_dispatch:        # tombol "Run workflow" manual
+  push:
+    paths:                  # otomatis jalan kalau file ini diubah
+      - "naskah.json"
+      - "make_video.py"
+      - "assets/**"
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pasang ffmpeg dan font
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - name: Pasang library Python
+        run: pip install -r requirements.txt
+      - name: Buat video
+        run: python make_video.py
+      - name: Simpan hasil
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-shorts
+          path: output/video.mp4
